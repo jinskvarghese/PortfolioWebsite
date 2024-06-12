@@ -1,10 +1,3 @@
-/*
-
-Vanilla Template
-
-https://templatemo.com/tm-526-vanilla
-
-*/
 
 @font-face {
   font-family: 'Radeil';
@@ -45,59 +38,9 @@ body {
   
 }
 
-/* svg {
-  overflow: visible;
-  width: 100px;
-  height: 150px;
-  
-  g {
-    animation: slide $transition-duration linear infinite;
-    
-    &:nth-child(2) {
-      animation-delay: $transition-duration / 4;
-      
-      path {
-        animation-delay: $transition-duration / 4;
-        stroke-dasharray: 0px $path-length + 1;
-        stroke-dashoffset: 1px;
-      }
-    }
-  }
-  
-  path{
-    stroke: url(#gradient);
-    stroke-width: 20px;
-    stroke-linecap: round;
-    fill: none;
-    stroke-dasharray: 0 $path-length;
-    stroke-dashoffset: 0;
-    animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1) infinite;
-  }
+.fade {
+  opacity: 0;
 }
-
-@keyframes slide {
-  0% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(50px);
-  }
-}
-
-@keyframes escalade {
-  0% {
-    stroke-dasharray: 0 $path-length;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: $path-length $path-length;
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dasharray: $path-length $path-length;
-    stroke-dashoffset: -($path-length - 1);
-  }
-} */
 
 .animated-text {
   opacity: 0;
@@ -251,9 +194,9 @@ a:hover { color: #FF0; }
   object-fit: cover;
 }
 
-/*----------
+/*
   NAV
-----------*/
+*/
 
 .fixed-side-navbar {
   font-family: "Lexend", sans-serif;
@@ -509,7 +452,6 @@ h4, .h4 {
   padding-left: 40px;
 }
 
-/* Responsive Styles */
 @media (max-width: 1200px) {
   .service-content .left-text .des {
     font-size: 34px;
@@ -665,17 +607,17 @@ section {
   width: 100%;
   border-radius: 5px;
   text-transform: uppercase;
-  font-size: 15px; /* Corrected from 15x to 15px */
+  font-size: 15px;
   color: #fff;
   font-weight: 700;
   text-decoration: none;
   border: none;
   cursor: none;
-  transition: letter-spacing 1s ease-out; /* Add a transition for letter spacing */
+  transition: letter-spacing 1s ease-out;
 }
 
 #contact button:hover {
-  letter-spacing: 4px; /* Increase the letter spacing on hover */
+  letter-spacing: 4px; 
 }
 
 
