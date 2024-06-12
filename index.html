@@ -23,23 +23,7 @@
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
-    <div id="intro">
-        <!-- My Video Editor Portfolio -->
-        <svg>
-            <g>
-              <path d="M 50,100 A 1,1 0 0 1 50,0"/>
-            </g>
-            <g>
-              <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
-            </g>
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" />
-              </linearGradient>
-            </defs>
-          </svg>
-    </div>
+    <div id="intro"></div>
 
     <div id="main-content">
 
@@ -47,7 +31,6 @@
         <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" href="#home"><span>Intro</span></a></li>
             <li class="nav-item"><a class="nav-link" href="#services"><span>About Me</span></a></li>
-            <!-- <li class="nav-item"><a class="nav-link" href="#portfolio"><span>Portfolio</span></a></li> -->
             <li class="nav-item"><a class="nav-link" href="#our-story"><span>Curated Projects</span></a></li>
             <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Me</span></a></li>
         </ul>
@@ -231,11 +214,9 @@
                                 <h3>Crossroads&apos;22 Aftermovie</h3>                            </div>
                         </div>
                     </div>
-                    <!-- Repeat similar blocks for other projects -->
                 </div>
             </section>
             
-            <!-- Modal for Detailed View -->
             <div id="modal" class="modal">
                 <div class="modal-content">
                     <span class="close">&#10005;</span>
@@ -247,7 +228,6 @@
                 </div>
             </div>
             
-            <!-- Detailed project descriptions (hidden) -->
             <div id="cr23promo" class="project-details" style="display: none;">
                 <h3>Crossroads&apos;23 Promo</h3>
                 <h4>The Brief</h4>
@@ -467,9 +447,6 @@
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
 
-            // cursorOutline.style.left = `${posX}px`;
-            // cursorOutline.style.top = `${posY}px`;
-
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
@@ -503,11 +480,10 @@
         </script>
         
         <script>
-            // JavaScript to handle the transition
             setTimeout(() => {
                 document.getElementById('intro').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
-            }, 5000); // 3000ms = 3 seconds
+            }, 5000);
         </script>
 
     <script>
@@ -549,7 +525,6 @@
                 });
             });
 
-            // Modal functionality
             const modal = document.getElementById('modal');
             const modalVideo = document.getElementById('modal-video');
             const modalDetails = document.getElementById('modal-details');
@@ -570,7 +545,6 @@
                 modalVideo.src = '';
             });
             
-            // Close the modal when clicking outside the modal content
             window.addEventListener('click', (event) => {
                 if (event.target == modal) {
                     modal.style.display = 'none';
@@ -584,30 +558,42 @@
 
     <script>
         $(document).ready(function(){
-          // Add smooth scrolling to all links
           $(".fixed-side-navbar a, .primary-button a").on('click', function(event) {
 
-            // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
-              // Prevent default anchor click behavior
               event.preventDefault();
 
-              // Store hash
               var hash = this.hash;
 
-              // Using jQuery's animate() method to add smooth page scroll
-              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
               $('html, body').animate({
                 scrollTop: $(hash).offset().top
               }, 800, function(){
            
-                // Add hash (#) to URL when done scrolling (default click behavior)
                 window.location.hash = hash;
               });
-            } // End if
+            }
           });
         });
     </script>
+
+<script 
+    src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module">
+</script> 
+<div id="centeredElement">
+<dotlottie-player 
+    src="https://lottie.host/4a791618-70f1-43f9-b47b-cf6ceed7d6a6/cj3WaCRPGC.json" background="transparent" speed="1.5" style="width: 300px; height: 300px; position: fixed; opacity: 1; transition: opacity 1s ease-out; top: 50%; left: 50%; margin-top: -150px; margin-left: -150px;" loop autoplay>
+</dotlottie-player>
+</div>
+<script>
+    setTimeout(function() {
+        var element = document.getElementById('centeredElement');
+        element.classList.add('fade');
+        
+        setTimeout(function() {
+            element.parentNode.removeChild(element);
+        }, 100);
+    }, 5000);
+</script>
 
 </body>
 </html>
