@@ -122,11 +122,11 @@ body {
   justify-content: center;
   width: 100px;
   height: 150px;
-  animation: fadeOut 2s forwards, slideIn 1s ease-out;
+  animation: fadeOut 5s forwards, slideIn 1s ease-out;
 }
 
 :root {
-  --transition-duration: 2s;
+  --transition-duration: 1.2s;
   --path-length: 157px;
 }
 svg {
