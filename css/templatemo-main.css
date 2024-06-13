@@ -38,6 +38,10 @@ body {
   
 }
 
+html{
+  cursor: none;
+}
+
 .fade {
   opacity: 0;
 }
@@ -63,6 +67,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: none;
   width: 100px;
   height: 150px;
   animation: fadeOut 5s forwards, slideIn 1s ease-out;
@@ -134,6 +139,7 @@ svg path {
 }
 #main-content {
   display: none;
+  cursor: none;
 }
 
 
@@ -727,6 +733,13 @@ footer em {
   font-weight: normal;
   color: #ffffff;
   text-align: center;
+}
+
+.line {
+  width: 70px;
+  height: 3px;
+  background-color: #ff7d27;
+  margin: 10px auto;
 }
 
 .protitle {
