@@ -675,6 +675,7 @@ footer ul li a {
 footer ul li a:hover {
   background-color: var(--secondary-color);
   cursor: none;
+  transform: scale(1.03);
 }
 
 footer p {
