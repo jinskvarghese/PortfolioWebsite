@@ -673,6 +673,7 @@ footer ul li a {
 
 footer ul li a:hover {
   background-color: var(--secondary-color);
+  cursor: none;
 }
 
 footer p {
