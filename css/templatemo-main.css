@@ -1,7 +1,7 @@
 
 @font-face {
-  font-family: 'Radeil';
-  src: url('fonts/Radeil3DDemoRuderight-4n7xD.woff2') format('woff2');
+  font-family: 'Bugaki';
+  src: url('fonts/BugakiRegular-514J8.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -151,8 +151,8 @@ svg path {
 .cursor-dot,
 .cursor-outline{
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   z-index: 1;
@@ -375,10 +375,10 @@ a:hover { color: #FF0; }
 
 .baner-content span {
   display: inline-block;
-  font-family: 'Radeil', sans-serif;
-  margin-top: -20px;
+  font-family: 'Bugaki', sans-serif;
+  margin-top: -10px;
   font-weight: 300;
-  font-size: 48px;
+  font-size: 45px;
   color: #fff;
 }
 
@@ -400,17 +400,17 @@ a:hover { color: #FF0; }
 .service-content {
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 15vh;
+  padding-top: 17vh;
   background-image: url(../img/IMG_5121.jpg);
   background-attachment: fixed;
-  min-height: 100vh;
+  min-height: 105vh;
   background-size: cover;
   background-position: center center;
 }
 
 .service-content .left-text h4 {
-  font-family: 'Radeil', sans-serif;
-  font-size: 38px;
+  font-family: 'Bugaki', sans-serif;
+  font-size: 39px;
   font-weight: 500;
   color: #fff;
 }
@@ -529,7 +529,7 @@ h4, .h4 {
   padding-top: 8vh;
   background-image: url(../img/cr22amv.jpg);
   background-attachment: fixed;
-  min-height: 100vh;
+  min-height: 105vh;
   background-size: cover;
   background-position: center center;
 }
@@ -724,7 +724,7 @@ footer em {
 }
 
 .contactheading{
-  font-family: 'Radeil', sans-serif;
+  font-family: 'Bugaki', sans-serif;
   font-size: 40px;
   font-weight: normal;
   color: #ffffff;
@@ -739,8 +739,8 @@ footer em {
 }
 
 .protitle {
-  font-family: 'Radeil', sans-serif;
-  font-size: 45px;
+  font-family: 'Bugaki', sans-serif;
+  font-size: 42px;
   font-weight: normal;
   color: #ffffff;
   text-align: center;
