@@ -52,12 +52,20 @@
         <div class="container">
             <div class="first-content">
                 <h1 class="animated-text">jins.</h1>
-                <span><em>Portfolio</em></span>
+                <span><em>Creative Video Editor</em></span>
                 <div class="primary-button">
-                    <a href="#services">Discover More</a>
+                    <a href="#contact-us">Let's Collaborate</a>
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator" id="scrollIndicator">
+            <dotlottie-player src="https://lottie.host/358e508f-5a24-4a35-afe0-430cabafbc62/VZ1lbDW822.json" 
+                              background="transparent" speed="1" 
+                              style="width: 100%; height: 100%;" 
+                              loop autoplay>
+            </dotlottie-player>
+        </div>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     </div>
     
 
@@ -525,12 +533,7 @@
         });
         </script>
         
-        <script>
-            setTimeout(() => {
-                document.getElementById('intro').style.display = 'none';
-                document.getElementById('main-content').style.display = 'block';
-            }, 10000);
-        </script>
+        
 
     <script>
         function openCity(cityName) {
@@ -552,52 +555,72 @@
     </script>
 
     <script>
+        // script.js
         document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projects = document.querySelectorAll('.project');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project');
 
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const category = button.getAttribute('data-category');
+    // Set 'all' category as active by default
+    const allButton = document.querySelector('.filter-btn[data-category="all"]');
+    if (allButton) {
+        allButton.classList.add('active');
+    }
 
-                    projects.forEach(project => {
-                        const categories = project.getAttribute('data-categories').split(' ');
-                        if (category === 'all' || categories.includes(category)) {
-                            project.style.display = 'block';
-                        } else {
-                            project.style.display = 'none';
-                        }
-                    });
-                });
-            });
+    projects.forEach(project => {
+        project.style.display = 'block'; // Show all projects by default
+    });
 
-            const modal = document.getElementById('modal');
-            const modalVideo = document.getElementById('modal-video');
-            const modalDetails = document.getElementById('modal-details');
-            const close = document.getElementsByClassName('close')[0];
-
-            document.querySelectorAll('.project-thumb').forEach(thumb => {
-                thumb.addEventListener('click', () => {
-                    modal.style.display = 'flex';
-                    const videoSrc = thumb.getAttribute('data-video');
-                    const detailsId = thumb.getAttribute('data-details');
-                    modalVideo.src = videoSrc;
-                    modalDetails.innerHTML = document.getElementById(detailsId).innerHTML;
-                });
-            });
-
-            close.addEventListener('click', () => {
-                modal.style.display = 'none';
-                modalVideo.src = '';
-            });
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
             
-            window.addEventListener('click', (event) => {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                    modalVideo.src = '';
+            const category = button.getAttribute('data-category');
+
+            projects.forEach(project => {
+                const categories = project.getAttribute('data-categories').split(' ');
+                if (category === 'all' || categories.includes(category)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
                 }
             });
         });
+    });
+
+    const modal = document.getElementById('modal');
+    const modalVideo = document.getElementById('modal-video');
+    const modalDetails = document.getElementById('modal-details');
+    const close = document.getElementsByClassName('close')[0];
+
+    document.querySelectorAll('.project-thumb').forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            document.body.classList.add('no-scroll'); 
+            const videoSrc = thumb.getAttribute('data-video');
+            const detailsId = thumb.getAttribute('data-details');
+            modalVideo.src = videoSrc;
+            modalDetails.innerHTML = document.getElementById(detailsId).innerHTML;
+        });
+    });
+
+    close.addEventListener('click', () => {
+        modal.style.display = 'none';
+        modalVideo.src = '';
+        document.body.classList.remove('no-scroll');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            modalVideo.src = '';
+            document.body.classList.remove('no-scroll');
+        }
+    });
+});
+
+
+
 
 
     </script>
@@ -649,23 +672,35 @@
             }, 100);
         }, 9500);
     </script>
+<script>
+            setTimeout(() => {
+                document.getElementById('intro').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }, 10000);
+        </script>
 
     <script>
-        // Function to remove hash from URL
         function removeHash() {
             if (window.location.hash) {
-                // Use setTimeout to ensure the scroll occurs before removing the hash
                 setTimeout(() => {
                     history.replaceState(null, null, window.location.href.split('#')[0]);
                 }, 0);
             }
         }
 
-        // Add event listener for hash change
         window.addEventListener('hashchange', removeHash);
-
-        // Also call the function when the page is loaded
         window.addEventListener('load', removeHash);
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 0) {
+                    scrollIndicator.classList.add('hidden');
+                }
+            });
+        });
     </script>
 
 </body>
