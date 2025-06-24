@@ -52,9 +52,9 @@
         <div class="container">
             <div class="first-content">
                 <h1 class="animated-text">jins.</h1>
-                <span><em>Creative Video Editor</em></span>
+                <span><em>Editor - Videographer - Colourist</em></span>
                 <div class="primary-button">
-                    <a href="#contact-us">Let's Collaborate</a>
+                    <a href="#contact-us" class="glowline">Let's Collaborate</a>
                 </div>
             </div>
         </div>
@@ -84,9 +84,8 @@
                             <li>-  Versatile Styles</li>
                             <li>-  Engaging Storytelling</li>
                         </ul></span>
-                        <div class="primary-button">
-                                <a href="Jinsresume.pdf" download>Download my Resume</a>
-
+                        <div class="primary-button" >
+                                <a href="JinsVideoEditorResume.pdf" download class="glowline">Download my Resume</a>
                         </div>
                         
                     </div>
@@ -117,9 +116,75 @@
         </div>
     </div>
 
-
-
+<div class="ser-section">
+    <h2 class="protitle" id="ser-head">Services</h2>
     
+    <div class="ser-container">
+        <div class="ser-sidebar">
+            <div class="ser-tab active" data-target="picture">Video Editing</div>
+            <div class="ser-tab" data-target="videography">Videography</div>
+            <div class="ser-tab" data-target="motion">Designing</div>
+            <div class="ser-tab" data-target="color">Color Grading</div>
+            <div class="ser-tab" data-target="post">Picture Editing</div>
+        </div>
+
+    <!-- Video Editing -->
+    <div class="ser-tab-content active" id="picture">
+        <img src="img/workeg.png" alt="Video Editing Showcase" class="ser-image">
+        <ul>
+            <li>Offline & Online Editing workflows</li>
+            <li>Skilled in Premiere Pro, Final Cut Pro X, DaVinci Resolve</li>
+            <li>Builds strong narratives through visual storytelling</li>
+            <li>Fast, clean, and platform-ready outputs</li>
+        </ul>
+    </div>
+
+    <!-- Videography -->
+    <div class="ser-tab-content" id="videography">
+        <img src="img/workeg.png" alt="Videography Showcase" class="ser-image">
+        <ul>
+            <li>Experience in filming events, promos, and reels</li>
+            <li>Hands-on with DSLR/Mirrorless setups, gimbals, lighting</li>
+            <li>Skilled in shot planning, framing, and direction</li>
+            <li>Ensures visual consistency from shoot to edit</li>
+        </ul>
+    </div>
+
+    <!-- Motion & UI/UX Design -->
+    <div class="ser-tab-content" id="motion">
+        <img src="img/workeg.png" alt="Motion Design & UI/UX Showcase" class="ser-image">
+        <ul>
+            <li>Motion graphics for branding, explainer, and reels</li>
+            <li>Tools: After Effects, Illustrator, Figma</li>
+            <li>UI/UX Design with wireframes & interactive prototypes</li>
+            <li>Designs that balance function and visual identity</li>
+        </ul>
+    </div>
+
+    <!-- Color Grading -->
+    <div class="ser-tab-content" id="color">
+        <img src="img/workeg.png" alt="Color Grading Showcase" class="ser-image">
+        <ul>
+            <li>Professional color grading in DaVinci Resolve</li>
+            <li>Enhances tone, mood, and cinematic aesthetics</li>
+            <li>Works with scopes, LUTs, and color harmony</li>
+            <li>Ensures consistency across lighting conditions</li>
+        </ul>
+    </div>
+
+    <!-- Photo Editing -->
+    <div class="ser-tab-content" id="post">
+        <img src="img/workeg.png" alt="Photo Editing Showcase" class="ser-image">
+        <ul>
+            <li>Retouching, color correction, and cleanup</li>
+            <li>Tools: Photoshop, Lightroom</li>
+            <li>Edits for portraits, events, and digital content</li>
+            <li>Maintains natural look while enhancing impact</li>
+        </ul>
+    </div>
+    </div>
+</div>
+
     <div class="tabs-content" id="our-story">
         <div class="container">
             <section id="projects">
@@ -472,8 +537,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="primary-button">
-                        <a href="#home">Back To Top</a>
+                    <div class="primary-button" >
+                        <a href="#home" class="glowline">Back To Top</a>
                     </div>
                     <ul>
                         <li><a href="https://www.instagram.com/_.jins._/"><i class="fa fa-instagram"></i></a></li>
@@ -482,7 +547,7 @@
                         <li><a href="https://www.behance.net/jinsvarghese"><i class="fa fa-behance"></i></a></li>
                         <li><a href="mailto:jinskv007@gmail.com"><i class="fa fa-envelope"></i></a></li>
                     </ul>
-                    <p class="rights">Jins Varghese 2024. All rights reserved.</p>
+                    <p class="rights">Jins Varghese 2025. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -676,7 +741,7 @@
             setTimeout(() => {
                 document.getElementById('intro').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
-            }, 10000);
+            }, 500);  //change time ..10000
         </script>
 
     <script>
@@ -702,6 +767,128 @@
             });
         });
     </script>
+
+    <script>
+const tabs = document.querySelectorAll('.ser-tab');
+const contents = document.querySelectorAll('.ser-tab-content');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        // Add active to clicked tab
+        tab.classList.add('active');
+        
+        // Show corresponding content
+        const targetId = tab.dataset.target;
+        document.getElementById(targetId).classList.add('active');
+    });
+});
+
+    </script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".glowline"); // selects ALL matching elements
+
+    let angle = 0;
+    const rotateGradient = () => {
+      angle = (angle + 1) % 360;
+      elements.forEach((el) => {
+        el.style.setProperty("--gradient-angle", `${angle}deg`);
+      });
+      requestAnimationFrame(rotateGradient); // keep animating
+    };
+
+    rotateGradient(); // start the animation
+  });
+  
+</script>
+
+<script>
+// Video scroll effect - simple and smooth
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('bg-video');
+    
+    // Create background image element
+    const backgroundImage = document.createElement('div');
+    backgroundImage.style.position = 'fixed';
+    backgroundImage.style.top = '0';
+    backgroundImage.style.left = '0';
+    backgroundImage.style.width = '100vw';
+    backgroundImage.style.height = '115vh';
+    backgroundImage.style.backgroundImage = 'url("img/Desktop - 2.jpg")'; // Replace with your image path
+    backgroundImage.style.backgroundSize = 'cover';
+    backgroundImage.style.backgroundPosition = 'center';
+    backgroundImage.style.backgroundRepeat = 'no-repeat';
+    backgroundImage.style.zIndex = '-2';
+    
+    // Insert background image before the video
+    video.parentNode.insertBefore(backgroundImage, video);
+    video.style.zIndex = '-1';
+    
+    // Configuration
+    const maxScale = 0.3;
+    const maxBorderRadius = 50;
+    const scaleEndPoint = window.innerHeight * 0.8; // When scaling completes
+    
+    function updateVideoOnScroll() {
+        const scrollY = window.pageYOffset;
+        
+        if (scrollY <= scaleEndPoint) {
+            // Phase 1: Scaling (stays centered)
+            const progress = scrollY / scaleEndPoint; // 0 to 1
+            const scale = 1 - (progress * (1 - maxScale));
+            const borderRadius = progress * maxBorderRadius;
+            
+            // Apply transformations
+            video.style.transform = `scale(${scale})`;
+            video.style.transformOrigin = 'center center';
+            video.style.borderRadius = `${borderRadius}px`;
+            video.style.position = 'fixed';
+            video.style.top = '50%';
+            video.style.left = '50%';
+            video.style.width = '100vw';
+            video.style.height = '100vh';
+            video.style.objectFit = 'cover';
+            video.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            
+        } else {
+            // Phase 2: Video stays small, normal scrolling
+            video.style.transform = `translate(-50%, -50%) scale(${maxScale})`;
+            video.style.transformOrigin = 'center center';
+            video.style.borderRadius = `${maxBorderRadius}px`;
+            video.style.position = 'fixed';
+            video.style.top = '50%';
+            video.style.left = '50%';
+            video.style.width = '100vw';
+            video.style.height = '100vh';
+            video.style.objectFit = 'cover';
+        }
+    }
+    
+    // Throttle scroll events for performance
+    let ticking = false;
+    function handleScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateVideoOnScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    // Add scroll event listener (passive for performance)
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initialize on page load
+    updateVideoOnScroll();
+});
+</script>
+
 
 </body>
 </html>
