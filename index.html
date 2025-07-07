@@ -20,6 +20,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
@@ -497,10 +498,11 @@
          <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h2 class="contactheading">Not Just Captivating, Elevating.<br> Your Brand Deserves the Best.</h2>
+                    <div class="contact-form">
+                    <!-- <h2 class="contactheading">Not Just Captivating, Elevating.<br> Your Brand Deserves the Best.</h2>
                     <div class="contact-form">
                         
-                        <!-- <div class="row"> -->
+                        
                             <form id="contact" action="https://formspree.io/f/mbjnnagk" method="POST">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -525,21 +527,95 @@
                                     </div>
                                 </div>
                             </form>
-                        <!-- </div> -->
-                    </div>
+                       
+                    </div> -->
+                    <div class="contact-wrapper">
+        <div class="contact-left">
+            <h1>Let's talk!</h1>
+            <p>Ask me anything or just say hi 👋</p>
+            <div class="info">
+                <div class="info-item email">
+                    jinskv007@gmail.com
+                </div>
+                <div class="info-item phone">
+                    +91 7736807501
+                </div>
+            </div>
+        </div>
+        <div class="contact-right">
+            <form action="https://formspree.io/f/mbjnnagk" method="POST">
+                <div class="input-row">
+                    <input name="name" type="text" placeholder="Name" required />
+                    <input name="email" type="email" placeholder="Email" required />
+                </div>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <div class="primary-button">
+                    <button type="submit" id="form-submit" class="glowline btn">Let's Connect</button>
+                </div>
+                </form>
+
+        </div>
+    </div>
+    </div>
                 </div>
                 
             </div>
         </div> 
     </div>
 
+<div class="contact-wrapper">
+    <div class="designwrapper">
+    <div class="designcontainer">
+        <div class="box">
+        <img src="https://source.unsplash.com/1000x800">
+        <span>CSS</span>
+        </div>
+        <div class="box">
+        <img src="https://source.unsplash.com/1000x802">
+        <span>Image</span>
+        </div>
+        <div class="box">
+        <img src="https://source.unsplash.com/1000x804">
+        <span>Hover</span>
+        </div>
+        <div class="box">
+        <img src="https://source.unsplash.com/1000x806">
+        <span>Effect</span>
+        </div>
+    </div>
+
+    <div class="designcontainer">
+        <div class="box">
+        <img src="https://source.unsplash.com/1000x808">
+        <span>More</span>
+        </div>
+        <div class="box">
+        <img src="https://source.unsplash.com/1000x810">
+        <span>Boxes</span>
+        </div>
+        <div class="box">
+        <img src="https://source.unsplash.com/1000x812">
+        <span>In</span>
+        </div>
+        <div class="box">
+        <img src="https://source.unsplash.com/1000x814">
+        <span>Row</span>
+        </div>
+    </div>
+    </div>
+
+</div>
+
+        
+    </div>
+
     <footer id="last">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="primary-button" >
-                        <a href="#home" class="glowline">Back To Top</a>
-                    </div>
+                    <!-- <div class="primary-button" >
+                        <a href="#home">Back To Top</a>
+                    </div> -->
                     <ul>
                         <li><a href="https://www.instagram.com/_.jins._/"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="https://twitter.com/jinskvarghese"><i class="fa fa-twitter"></i></a></li>
@@ -808,86 +884,142 @@ tabs.forEach(tab => {
 </script>
 
 <script>
-// Video scroll effect - simple and smooth
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('bg-video');
-    
-    // Create background image element
+
+    // Insert a background image layer behind the video (optional)
     const backgroundImage = document.createElement('div');
-    backgroundImage.style.position = 'fixed';
-    backgroundImage.style.top = '0';
-    backgroundImage.style.left = '0';
-    backgroundImage.style.width = '100vw';
-    backgroundImage.style.height = '115vh';
-    backgroundImage.style.backgroundImage = 'url("img/Desktop - 2.jpg")'; // Replace with your image path
-    backgroundImage.style.backgroundSize = 'cover';
-    backgroundImage.style.backgroundPosition = 'center';
-    backgroundImage.style.backgroundRepeat = 'no-repeat';
-    backgroundImage.style.zIndex = '-2';
-    
-    // Insert background image before the video
+    backgroundImage.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 115vh;
+        background-image: url("img/Desktop - 2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -2;
+    `;
     video.parentNode.insertBefore(backgroundImage, video);
     video.style.zIndex = '-1';
-    
-    // Configuration
+
+    // Initial setup
+    video.style.position = 'fixed';
+    video.style.top = '50%';
+    video.style.left = '50%';
+    video.style.width = '100vw';
+    video.style.height = '100vh';
+    video.style.objectFit = 'cover';
+    video.style.transformOrigin = 'center center';
+    video.style.transform = 'translate(-50%, -50%) scale(1)';
+    // // Trigger on load
+    // smoothScrollHandler();
+
+    const scaleEndPoint = window.innerHeight * 0.8;
     const maxScale = 0.3;
     const maxBorderRadius = 50;
-    const scaleEndPoint = window.innerHeight * 0.8; // When scaling completes
-    
-    function updateVideoOnScroll() {
+
+    let prevScrollY = window.pageYOffset;
+    let currentProgress = 0;
+
+    function updateVideo(progress) {
+        const scale = 1 - (progress * (1 - maxScale));
+        const borderRadius = progress * maxBorderRadius;
+
+        video.animate({
+            transform: `translate(-50%, -50%) scale(${scale})`,
+            borderRadius: `${borderRadius}px`
+        }, {
+            duration: 800,
+            fill: 'forwards',
+            easing: 'ease-out'
+        });
+    }
+
+    function smoothScrollHandler() {
         const scrollY = window.pageYOffset;
-        
-        if (scrollY <= scaleEndPoint) {
-            // Phase 1: Scaling (stays centered)
-            const progress = scrollY / scaleEndPoint; // 0 to 1
-            const scale = 1 - (progress * (1 - maxScale));
-            const borderRadius = progress * maxBorderRadius;
-            
-            // Apply transformations
-            video.style.transform = `scale(${scale})`;
-            video.style.transformOrigin = 'center center';
-            video.style.borderRadius = `${borderRadius}px`;
-            video.style.position = 'fixed';
-            video.style.top = '50%';
-            video.style.left = '50%';
-            video.style.width = '100vw';
-            video.style.height = '100vh';
-            video.style.objectFit = 'cover';
-            video.style.transform = `translate(-50%, -50%) scale(${scale})`;
-            
-        } else {
-            // Phase 2: Video stays small, normal scrolling
-            video.style.transform = `translate(-50%, -50%) scale(${maxScale})`;
-            video.style.transformOrigin = 'center center';
-            video.style.borderRadius = `${maxBorderRadius}px`;
-            video.style.position = 'fixed';
-            video.style.top = '50%';
-            video.style.left = '50%';
-            video.style.width = '100vw';
-            video.style.height = '100vh';
-            video.style.objectFit = 'cover';
+        const progress = Math.min(scrollY / scaleEndPoint, 1);
+
+        if (Math.abs(progress - currentProgress) > 0.001) {
+            currentProgress = progress;
+            updateVideo(progress);
         }
     }
-    
-    // Throttle scroll events for performance
+
     let ticking = false;
-    function handleScroll() {
+    function onScroll() {
         if (!ticking) {
             requestAnimationFrame(() => {
-                updateVideoOnScroll();
+                smoothScrollHandler();
                 ticking = false;
             });
             ticking = true;
         }
     }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
     
-    // Add scroll event listener (passive for performance)
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Initialize on page load
-    updateVideoOnScroll();
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const section = document.querySelector(".contact-content");
+  let latestScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateParallax() {
+    // Adjust the multiplier (0.5 = slower bg movement)
+    const offset = latestScrollY * 0.4;
+    section.style.backgroundPosition = `center ${-offset}px`;
+    ticking = false;
+  }
+
+  function onScroll() {
+    latestScrollY = window.scrollY;
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Initial call
+  updateParallax();
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const section = document.querySelector(".projects-content");
+  let latestScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateParallax() {
+    // Adjust the multiplier (0.5 = slower bg movement)
+    const offset = latestScrollY * 0.4;
+    section.style.backgroundPosition = `center ${-offset}px`;
+    ticking = false;
+  }
+
+  function onScroll() {
+    latestScrollY = window.scrollY;
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Initial call
+  updateParallax();
+});
+</script>
+
 
 
 </body>
